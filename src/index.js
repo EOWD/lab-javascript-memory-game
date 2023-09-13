@@ -43,7 +43,7 @@ window.addEventListener("load", (event) => {
   document.querySelector("#memory-board").innerHTML = html;
 
   // Bind the click event of each element to a function
-  const flippedCards = [];
+  const flippedCards = []
 
   let isClickDisabled = false;
 
@@ -60,7 +60,7 @@ window.addEventListener("load", (event) => {
             card2.getAttribute("data-card-name")
           )
         ) {
-          memoryGame.checkIfPair();
+          memoryGame.checkIfPair()
 
           document.querySelector("#pairs-guessed").innerHTML =
             memoryGame.pairsGuessed / 2;
@@ -72,10 +72,10 @@ window.addEventListener("load", (event) => {
             isClickDisabled = false;
           }, 1000);
         }
-        flippedCards.length = 0;
+        flippedCards.length = 0
       }
       if (memoryGame.checkIfFinished()) {
-        alert("You Won");
+        memoryGame.showWinPopup()
       }
 
       document.querySelector("#pairs-clicked").innerHTML =

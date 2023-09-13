@@ -30,4 +30,8 @@ class MemoryGame {
   checkIfFinished() {
     return this.pairsGuessed/2 === this.cards.length/2
   }
+  showWinPopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+  }
 }
