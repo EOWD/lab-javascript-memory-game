@@ -7,13 +7,14 @@ body {
 }
 
 #memory-board {
-  background: #dddddd;
+  background: rgba(255,255,255,.7);
   width: 820px;
   height: 540px;
   padding: 70px;
   margin: 0px auto;
   border-radius: 84px;
   box-shadow: inset 0px 0px 20px -6px #615961;
+  
 }
 
 .card {
@@ -21,10 +22,13 @@ body {
   perspective: 300px;
   transform-style: preserve-3d;
   position: relative;
+  
 }
 
 .card.turned {
   pointer-events: none;
+  
+  
 }
 
 .card.turned .front {
@@ -42,6 +46,7 @@ body {
   padding: 20px;
   font-size: 64px;
   transition: transform 0.6s ease;
+  border-radius: 20%;
 }
 
 .card .back {
