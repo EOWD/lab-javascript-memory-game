@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Superhero Memory Game</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- LINK THE STYLES HERE -->
   </head>
   <body>
@@ -16,14 +16,17 @@
       <h2>Score</h2>
       <p>Pairs clicked: <span id="pairs-clicked">0</span></p>
       <p>Pairs guessed: <span id="pairs-guessed">0</span></p>
+      <div id="timer">Timer:00:00</div>
     </div>
     <div id="memory-board"></div>
     <div id="popup" class="popup">
-      <p> You won!! </p></div>
+      <p>You won!!</p>
+      <button id="play-again-button">Play again!!</button>
+      <div id="timer">Time: 00:00</div>
+    </div>
 
     <!-- LINK THE JAVASCRIPT FILES HERE (keep in mind that the order in which you link them MATTERS) -->
     <script src="./src/memory.js"></script>
     <script src="./src/index.js"></script>
-    
   </body>
 </html>

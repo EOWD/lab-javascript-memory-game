@@ -27,7 +27,8 @@ const cards = [
 
 const memoryGame = new MemoryGame(cards);
 console.log(memoryGame);
-window.addEventListener("load", (event) => {
+const LoadGame = window.addEventListener("load", (event) => {
+  memoryGame.startTimer();
   let html = "";
   memoryGame.shuffleCards();
   memoryGame.cards.forEach((pic) => {
@@ -39,11 +40,17 @@ window.addEventListener("load", (event) => {
     `;
   });
 
-  // Add all the divs to the HTML
-  document.querySelector("#memory-board").innerHTML = html;
 
-  // Bind the click event of each element to a function
-  const flippedCards = []
+  document.querySelector("#memory-board").innerHTML = html;
+  const playAgainButton = document.getElementById("play-again-button");
+
+  playAgainButton.addEventListener("click", () => {
+    memoryGame.resetGame();
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
+  });
+
+  const flippedCards = [];
 
   let isClickDisabled = false;
 
@@ -60,7 +67,7 @@ window.addEventListener("load", (event) => {
             card2.getAttribute("data-card-name")
           )
         ) {
-          memoryGame.checkIfPair()
+          memoryGame.checkIfPair();
 
           document.querySelector("#pairs-guessed").innerHTML =
             memoryGame.pairsGuessed / 2;
@@ -70,12 +77,14 @@ window.addEventListener("load", (event) => {
             card1.classList.remove("turned");
             card2.classList.remove("turned");
             isClickDisabled = false;
-          }, 1000);
+          }, 500);
         }
-        flippedCards.length = 0
+        flippedCards.length = 0;
       }
       if (memoryGame.checkIfFinished()) {
-        memoryGame.showWinPopup()
+        memoryGame.updateTimer();
+        memoryGame.stopTimer();
+        memoryGame.showWinPopup();
       }
 
       document.querySelector("#pairs-clicked").innerHTML =

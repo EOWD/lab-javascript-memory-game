@@ -1,20 +1,19 @@
 body {
   margin: 0;
 
-  background: url('../img/background.jpg') no-repeat;
+  background: url("../img/background.jpg") no-repeat;
   background-size: cover;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 #memory-board {
-  background: rgba(255,255,255,.7);
+  background: rgba(255, 255, 255, 0.7);
   width: 820px;
   height: 540px;
   padding: 70px;
   margin: 0px auto;
   border-radius: 84px;
   box-shadow: inset 0px 0px 20px -6px #615961;
-  
 }
 
 .card {
@@ -22,13 +21,10 @@ body {
   perspective: 300px;
   transform-style: preserve-3d;
   position: relative;
-  
 }
 
 .card.turned {
   pointer-events: none;
-  
-  
 }
 
 .card.turned .front {
@@ -69,6 +65,10 @@ body {
   width: 200px;
   padding: 20px;
   margin-left: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 h1 {
@@ -81,19 +81,23 @@ h1 {
 
 h2 {
   margin-top: 0;
+  margin-bottom: 0;
   color: #456783;
   font-weight: bolder;
   font-size: 35px;
   text-align: center;
   text-shadow: 1px red;
+
 }
 
 p {
   font-weight: bolder;
   font-size: 20px;
   text-align: center;
+  margin-top: 2%;
 }
 .popup {
+  display: none;
   display: none;
   position: fixed;
   top: 50%;
@@ -102,4 +106,13 @@ p {
   background-color: white;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#timer{
+  font-size: 50%;
+  text-align: center;
+  color: red;
+  background-color:rgba(13, 13, 13,.8); 
+  border-radius: 15%;
+  width: fit-content;
+  padding: 5%;
 }
